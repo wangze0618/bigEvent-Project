@@ -6,7 +6,6 @@ $(function () {
     const password = document.querySelector('#password');
     const repassword = document.querySelector('#repassword');
 
-
     linkToReg.addEventListener('click', function () {
         regBox.classList.remove('hide')
         regBox.classList.add('show')
@@ -24,6 +23,7 @@ $(function () {
 
     // 进行自定义表单验证规则
     const form = layui.form;
+
     // form.addEventListener()
     form.verify({
         username: [
@@ -47,15 +47,36 @@ $(function () {
     // 注册
     $('.regForm').submit(function (e) {
         e.preventDefault();
-        $loginValue = $('.regForm').serialize();
+        $regValue = $('.regForm').serialize();
 
         $.ajax({
             type: "post",
-            url: "http://api-breakingnews-web.itheima.net/api/reguser",
+            url: "/api/reguser",
+            data: $regValue,
+            success: function (res) {
+                if (res.status === 0) {
+                    layer.msg("注册成功，请登录！");
+                } else {
+                    layer.msg(res.message)
+                }
+            }
+        });
+    })
+    // 登录
+    $('.loginForm').submit(function (e) {
+        e.preventDefault();
+        $loginValue = $('.loginForm').serialize();
+
+        $.ajax({
+            type: "post",
+            url: "/api/login",
             data: $loginValue,
             success: function (res) {
                 if (res.status === 0) {
-                    layer.msg(res.message)
+                    layer.msg("登录成功");
+                    console.log(res);
+                    location.href = './index.html'
+                    localStorage.setItem('token', res.token)
                 } else {
                     layer.msg(res.message)
                 }
