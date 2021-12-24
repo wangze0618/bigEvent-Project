@@ -1,0 +1,43 @@
+@font-face {
+  font-family: "iconfont";
+  src: url("../fonts/iconfont.woff2?t=1640350894944") format("woff2"), url("../fonts/iconfont.woff?t=1640350894944") format("woff"), url("../fonts/iconfont.ttf?t=1640350894944") format("truetype");
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.header-box {
+  padding-bottom: 5px !important;
+}
+
+.header-box ul {
+  padding-top: 5px;
+}
+
+.logo-box {
+  background-color: #23262e !important;
+}
+
+.left-box:nth-child(1) li {
+  position: relative;
+}
+
+.left-box:nth-child(1) li i {
+  position: absolute;
+  top: 0px;
+  left: 15px;
+}
+
+.left-box:nth-child(1) li a {
+  padding-left: 30px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+}
