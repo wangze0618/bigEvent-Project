@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 15px;
+  position: relative;
+  background-color: #f2f3f5;
+}
+
+.card-body {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.form-label {
+  width: 100px;
+}

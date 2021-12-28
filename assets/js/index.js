@@ -20,7 +20,6 @@ $(function () {
             type: "get",
             url: "/my/userinfo",
             success: function (res) {
-                console.log(res);
                 isLogin(res)
                 if (res) {
                     renderInfo(res)
