@@ -1,6 +1,5 @@
 $(function () {
     initUserInfo()
-
     const form = layui.form
     form.verify({
         nickname: function (value) {
@@ -20,7 +19,6 @@ $(function () {
                 if (res.status != 0) {
                     layer.msg('获取用户基本信息失败！')
                 }
-                console.log(res);
                 form.val('userinfo', res.data)
             }
         });
@@ -44,6 +42,34 @@ $(function () {
     // 重置用户信息
     const btnReset = document.querySelector("#btnReset");
     // 添加防抖
-    btnReset.addEventListener('click', debounce(initUserInfo)
-    )
+    btnReset.addEventListener('click', debounce(initUserInfo))
+
+    // 更新用户基本信息
+    const formBody = document.querySelector('.form')
+    function updateInfo() {
+        const data = new FormData(formBody);
+        const id = data.get('id')
+        const nickname = data.get('nickname')
+        const email = data.get('email')
+
+        $.ajax({
+            type: "post",
+            url: "/my/userinfo",
+            data: {
+                id: id,
+                nickname: nickname,
+                email: email
+
+            },
+            success: function (res) {
+                if (res.status !== 0) {
+                    return layer.msg('更新用户信息失败')
+                }
+                layer.msg('更新用户信息成功')
+                window.parent.getUserInfo()
+            }
+        });
+
+    }
+    formBody.addEventListener('submit', debounce(updateInfo))
 })

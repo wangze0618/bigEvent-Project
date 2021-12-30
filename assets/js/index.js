@@ -1,9 +1,6 @@
 $(function () {
+
     getUserInfo()
-
-
-
-
     // 检测是否登录
     function isLogin(res) {
         if (res.status == 1 && res.message == '身份认证失败！') {
@@ -73,5 +70,6 @@ $(function () {
         }
     }
     btnLogout.addEventListener('click', debounce(logout))
+
 })
 
