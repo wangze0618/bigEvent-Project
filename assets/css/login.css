@@ -1,3 +1,4 @@
+@charset "UTF-8";
 html,
 body {
   margin: 0;
@@ -32,7 +33,14 @@ body {
 .loginBox .titleBox {
   width: 400px;
   height: 60px;
-  background: url(../images/login_title.png) no-repeat center;
+  font-family: -apple-system, "宋体", BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 60px;
+  user-select: none;
+  color: #19b9e7;
+}
+
+.loginBox .titleBox h1 {
+  font-weight: 800 !important;
 }
 
 .loginBox .userloginBox {
