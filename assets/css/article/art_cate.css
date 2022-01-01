@@ -1,0 +1,11 @@
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.addForm {
+  padding: 20px;
+}
+label {
+  width: 90px !important;
+}
