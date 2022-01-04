@@ -33,18 +33,7 @@ file.addEventListener('change', function (e) {
             .cropper(options)
     }
 })
-// $('#file').on('change', function (e) {
-//     let img = e.target.files[0];
-//     let imgUrl = URL.createObjectURL(img)
-//     console.log(2);
 
-//     if (e.target.files.length === 0) {
-//         return layer.msg('请选择图片！')
-//     }
-//     $image.cropper('destroy')
-//         .attr('src', imgUrl)
-//         .cropper(options)
-// })
 
 const confirm = document.querySelector('.confirm');
 confirm.addEventListener('click', function () {
